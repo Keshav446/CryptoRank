@@ -22,6 +22,7 @@
 
   <div class="app-container">
 
+    
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="logo-area">
@@ -33,7 +34,7 @@
       </div>
 
       <div id="geminiInsight">No insight available</div>
-      
+
       <nav>
         <a href="#" class="nav-item active" data-tab="0"><i class="fa-solid fa-house"></i> Dashboard</a>
         <a href="#" class="nav-item" data-tab="1"><i class="fa-solid fa-whale"></i> Whale Tracker</a>
@@ -88,9 +89,11 @@
               <div class="change positive">+12 this hour</div>
             </div>
 
+            
             <div class="stat-card neon-orange" data-tab-target="2">
               <div class="icon">🚀</div>
               <div class="label">PUMP SIGNALS</div>
+              
               <div class="value" id="pump-count">9</div>
               <div class="change positive">3 new • 92% conf</div>
             </div>
@@ -140,12 +143,68 @@
 
         </div>
 
+        
         <!-- Other tabs are injected here via JS -->
         <div id="dynamic-tab-content" style="display:none;"></div>
 
       </div>
     </main>
   </div>
+
+  <!-- Pump Detection -->
+<div id="tab-2" class="tab-content">
+
+<h2>Pump Detection AI</h2>
+
+<div class="ai-box">
+<b>AI Analysis:</b>
+<span id="pumpInsight">Loading pump signals...</span>
+</div>
+
+<table class="data-table">
+<thead>
+<tr>
+<th>Token</th>
+<th>Symbol</th>
+<th>Price</th>
+<th>Change %</th>
+<th>Volume</th>
+</tr>
+</thead>
+
+<tbody id="pumpTable"></tbody>
+</table>
+
+</div> <!-- ⚠️ YE DIV IMPORTANT HAI -->
+
+<!-- Airdrop Detector -->
+<div id="tab-3" class="tab-content">
+
+<h2>Airdrop Detector</h2>
+
+<table class="data-table">
+
+<thead>
+<tr>
+<th>Project</th>
+<th>Token</th>
+<th>Eligibility</th>
+<th>Reward</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody id="airdropTable">
+<tr>
+<td colspan="5">Loading airdrops...</td>
+</tr>
+</tbody>
+
+</table>
+
+</div>
+
+
 
   <script src="script.js"></script>
 </body>

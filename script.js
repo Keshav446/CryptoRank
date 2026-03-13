@@ -167,6 +167,34 @@ async function loadPumpSignals() {
     if (pumpCountEl) pumpCountEl.textContent = data.metrics?.active_signals ?? '0';
 }
 
+loadPumpSignals()
+
+
+async function loadAirdrops() {
+
+const res = await fetch("http://127.0.0.1:8000/airdrops")
+const data = await res.json()
+
+const table = document.getElementById("airdropTable")
+
+table.innerHTML = ""
+
+data.data.forEach(a => {
+
+table.innerHTML += `
+<tr>
+<td>${a.project}</td>
+<td>${a.token}</td>
+<td>${a.eligibility}</td>
+<td>${a.reward}</td>
+<td>${a.status}</td>
+</tr>
+`
+
+})
+
+}
+loadAirdrops()
 // ────────────────────────────────────────────────
 // Scam / Rug Alerts
 // ────────────────────────────────────────────────
