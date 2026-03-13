@@ -23,6 +23,19 @@ const refreshBtn       = document.getElementById('refresh-all');
 const askAiBtn         = document.getElementById('ask-ai');
 const newInsightBtn    = document.getElementById('new-insight');
 
+
+
+async function getWhales() {
+    const res = await fetch("http://127.0.0.1:8000/whales-eth");
+    const data = await res.json();
+    document.getElementById("geminiInsight").innerText = data.ai_insight;
+    console.log(data);
+}
+
+getWhales();
+
+
+
 // ────────────────────────────────────────────────
 // API Helper
 // ────────────────────────────────────────────────
